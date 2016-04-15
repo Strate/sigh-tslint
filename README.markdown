@@ -10,7 +10,7 @@ var tslint, glob
 
 module.exports = function(pipelines) {
   pipelines['lint'] = [
-    glob("src/**/{*.ts,*.tsx}),
+    glob("src/**/{*.ts,*.tsx})",
     tslint({
       configuration: require("./tslint.json")
     })
