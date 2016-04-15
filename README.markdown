@@ -1,12 +1,19 @@
 # sigh-tslint
 
-[![build status](https://circleci.com/gh/Strate/sigh-tslint.png)](https://circleci.com/gh/Strate/sigh-tslint)
-
-Sigh plugin for...
+Sigh plugin for using tslint
 
 ## Example
 
 `npm install --save-dev sigh-tslint` then add something like this to your `sigh.js`:
 ```javascript
-// TODO: example goes here
+var tslint, glob
+
+module.exports = function(pipelines) {
+  pipelines['lint'] = [
+    glob("src/**/{*.ts,*.tsx}),
+    tslint({
+      configuration: require("./tslint.json")
+    })
+  ]
+}
 ```
